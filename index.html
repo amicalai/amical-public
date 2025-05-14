@@ -26,13 +26,18 @@
       linksContainer.innerHTML = '';
 
       if (lang === 'fr') {
-        for (let i = 1; i <= 3; i++) {
+        const links = [
+          { href: "https://snippet.pricewell.io/pricing/22c92117-b829-4416-a889-1d38112a2d80", text: "Nouveau Client - Inscription" },
+          { href: "https://snippet.pricewell.io/portal/f318d3a9-5567-45f0-b2c6-14a049fe7b2a", text: "Gestion de la facturation - Clients existants" },
+          { href: "https://www.appsheet.com/start/6912990d-9afe-4723-92d8-a14f51ef0e86", text: "Personalisation du contenu" }
+        ];
+        links.forEach(link => {
           const a = document.createElement('a');
-          a.href = 'https://fx.rocks/';
+          a.href = link.href;
           a.target = '_blank';
-          a.textContent = 'Lien Français ' + i;
+          a.textContent = link.text;
           linksContainer.appendChild(a);
-        }
+        });
       } else {
         const links = [
           { href: "https://snippet.pricewell.io/pricing/22c92117-b829-4416-a889-1d38112a2d80", text: "New Client - Sign Up" },
